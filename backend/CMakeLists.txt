@@ -21,8 +21,16 @@ FetchContent_MakeAvailable(Crow)
 
 add_executable(fast_drive
     src/main.cpp
+    src/controllers/HealthController.cpp
+    src/routes/HealthRoutes.cpp
+)
+
+target_include_directories(fast_drive
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_link_libraries(fast_drive
-    PRIVATE Crow::Crow
+    PRIVATE
+        Crow::Crow
 )
