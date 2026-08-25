@@ -2,22 +2,21 @@
 
 DatabaseConnection::DatabaseConnection(
     const std::string& host,
+    int port,
     const std::string& username,
     const std::string& password,
     const std::string& database
 )
-    : host(host),
-      username(username),
-      password(password),
-      database(database) {
+    : session(
+        host,
+        port,
+        username,
+        password
+      ) {
 
-    driver = sql::mysql::get_mysql_driver_instance();
+    session.getSchema(database);
 }
 
-std::unique_ptr<sql::Connection>
-DatabaseConnection::getConnection() {
-
-    return std::unique_ptr<sql::Connection>(
-        driver->connect(host, username, password)
-    );
+mysqlx::Session& DatabaseConnection::getSession() {
+    return session;
 }
