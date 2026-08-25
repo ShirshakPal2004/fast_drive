@@ -80,6 +80,7 @@ Fast Drive is a full-stack software engineering project that provides users with
 
 ## Project Structure
 
+```text
 fast_drive/
 │
 ├── frontend/       # React frontend
@@ -90,6 +91,7 @@ fast_drive/
 │
 ├── .gitignore
 └── README.md
+```
 
 ## Development
 
