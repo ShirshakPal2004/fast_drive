@@ -1,27 +1,23 @@
 #pragma once
 
-#include <mysql_driver.h>
-#include <mysql_connection.h>
+#include <mysqlx/xdevapi.h>
 
-#include <memory>
 #include <string>
 
 class DatabaseConnection {
 public:
+
     DatabaseConnection(
         const std::string& host,
+        int port,
         const std::string& username,
         const std::string& password,
         const std::string& database
     );
 
-    std::unique_ptr<sql::Connection> getConnection();
+    mysqlx::Session& getSession();
 
 private:
-    sql::mysql::MySQL_Driver* driver;
 
-    std::string host;
-    std::string username;
-    std::string password;
-    std::string database;
+    mysqlx::Session session;
 };
