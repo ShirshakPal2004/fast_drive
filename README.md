@@ -33,7 +33,7 @@ Fast Drive is a full-stack software engineering project that provides users with
 
 ## Architecture
 
-```text
+
 ┌─────────────────────┐
 │      React UI       │
 │   HTML / CSS / JS   │
@@ -58,7 +58,7 @@ Fast Drive is a full-stack software engineering project that provides users with
    │Metadata│ │ Actual Files │
    └────────┘ └──────────────┘
 
-## Planned Features
+   ## Planned Features
  User registration and login
  File upload
  File download
@@ -99,3 +99,5 @@ Development will follow feature-based branches and pull requests to keep the cod
 ## Status
 
 🚧 Currently under development
+
+
