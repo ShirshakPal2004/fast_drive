@@ -1,0 +1,56 @@
+# =========================
+# Frontend
+# =========================
+
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+
+# =========================
+# Backend
+# =========================
+
+backend/build/
+backend/bin/
+backend/.env
+
+# C++ build files
+*.o
+*.obj
+*.exe
+*.out
+
+# =========================
+# Environment / Secrets
+# =========================
+
+.env
+.env.*
+
+# =========================
+# File Storage
+# =========================
+
+storage/*
+!storage/.gitkeep
+
+# =========================
+# IDE
+# =========================
+
+.vscode/
+.idea/
+
+# =========================
+# OS
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+
+*.log
