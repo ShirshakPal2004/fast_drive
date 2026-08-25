@@ -1,19 +1,16 @@
-#include "crow.h"
+#include <crow.h>
+
+#include "routes/HealthRoutes.h"
 
 int main() {
+
     crow::SimpleApp app;
 
-    CROW_ROUTE(app, "/api/health")
-    ([] {
-        crow::json::wvalue response;
+    registerHealthRoutes(app);
 
-        response["status"] = "ok";
-        response["service"] = "Fast Drive Backend";
-
-        return response;
-    });
-
-    app.port(8080).multithreaded().run();
+    app.port(8080)
+       .multithreaded()
+       .run();
 
     return 0;
 }
