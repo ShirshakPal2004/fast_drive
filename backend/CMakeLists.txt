@@ -37,7 +37,10 @@ add_executable(fast_drive
     src/main.cpp
 
     src/controllers/HealthController.cpp
+    src/controllers/DatabaseHealthController.cpp
+
     src/routes/HealthRoutes.cpp
+    src/routes/DatabaseHealthRoutes.cpp
 
     src/utils/DatabaseConnection.cpp
     src/utils/Environment.cpp
