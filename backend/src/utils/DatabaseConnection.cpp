@@ -12,9 +12,8 @@ DatabaseConnection::DatabaseConnection(
         port,
         username,
         password
-      ) {
-
-    session.getSchema(database);
+      ),
+      database(database) {
 }
 
 mysqlx::Session& DatabaseConnection::getSession() {
