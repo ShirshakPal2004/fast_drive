@@ -6,7 +6,6 @@
 
 class DatabaseConnection {
 public:
-
     DatabaseConnection(
         const std::string& host,
         int port,
@@ -18,6 +17,6 @@ public:
     mysqlx::Session& getSession();
 
 private:
-
     mysqlx::Session session;
+    std::string database;
 };
