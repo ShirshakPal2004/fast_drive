@@ -4,6 +4,7 @@
     "dependencies": [
         "crow",
         "mysql-connector-cpp",
-        "libargon2"
+        "libargon2",
+        "openssl"
     ]
 }
