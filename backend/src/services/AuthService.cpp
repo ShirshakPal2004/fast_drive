@@ -1,4 +1,5 @@
 #include "services/AuthService.h"
+#include "utils/PasswordHasher.h"
 
 #include <stdexcept>
 
@@ -28,8 +29,8 @@ User AuthService::registerUser(
         throw std::runtime_error("Email already registered");
     }
 
-    // Password hashing will be added next.
-    std::string passwordHash = password;
+    std::string passwordHash =
+        PasswordHasher::hash(password);
 
     return userRepository.createUser(
         name,
