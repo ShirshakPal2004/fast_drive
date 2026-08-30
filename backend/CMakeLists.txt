@@ -34,10 +34,12 @@ add_executable(fast_drive
     # Controllers
     src/controllers/HealthController.cpp
     src/controllers/DatabaseHealthController.cpp
+    src/controllers/AuthController.cpp
 
     # Routes
     src/routes/HealthRoutes.cpp
     src/routes/DatabaseHealthRoutes.cpp
+    src/routes/AuthRoutes.cpp
 
     # Repositories
     src/repositories/UserRepository.cpp
@@ -51,7 +53,6 @@ add_executable(fast_drive
     src/utils/ApplicationContext.cpp
     src/utils/PasswordHasher.cpp
 )
-
 
 # ========================================
 # Include Directories
