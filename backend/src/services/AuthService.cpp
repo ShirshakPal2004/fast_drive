@@ -25,8 +25,16 @@ User AuthService::registerUser(
         throw std::invalid_argument("Password is required");
     }
 
+    if (password.length() < 8) {
+        throw std::invalid_argument(
+            "Password must contain at least 8 characters"
+        );
+    }
+
     if (userRepository.emailExists(email)) {
-        throw std::runtime_error("Email already registered");
+        throw std::runtime_error(
+            "Email already registered"
+        );
     }
 
     std::string passwordHash =
