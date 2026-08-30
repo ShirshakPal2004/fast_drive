@@ -2,6 +2,7 @@
 
 #include "routes/HealthRoutes.h"
 #include "routes/DatabaseHealthRoutes.h"
+#include "routes/AuthRoutes.h"
 
 int main() {
 
@@ -9,6 +10,7 @@ int main() {
 
     registerHealthRoutes(app);
     registerDatabaseHealthRoutes(app);
+    registerAuthRoutes(app);
 
     app.port(8080)
        .multithreaded()
