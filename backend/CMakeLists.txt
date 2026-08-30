@@ -21,6 +21,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(Crow CONFIG REQUIRED)
 find_package(mysql-concpp CONFIG REQUIRED)
 find_package(argon2 CONFIG REQUIRED)
+find_package(OpenSSL REQUIRED)
 
 
 # ========================================
@@ -29,6 +30,7 @@ find_package(argon2 CONFIG REQUIRED)
 
 add_executable(fast_drive
 
+    # Application
     src/main.cpp
 
     # Controllers
@@ -43,6 +45,7 @@ add_executable(fast_drive
 
     # Repositories
     src/repositories/UserRepository.cpp
+    src/repositories/SessionRepository.cpp
 
     # Services
     src/services/AuthService.cpp
@@ -52,7 +55,10 @@ add_executable(fast_drive
     src/utils/Environment.cpp
     src/utils/ApplicationContext.cpp
     src/utils/PasswordHasher.cpp
+    src/utils/TokenGenerator.cpp
+    src/utils/TokenHasher.cpp
 )
+
 
 # ========================================
 # Include Directories
@@ -73,4 +79,5 @@ target_link_libraries(fast_drive
         Crow::Crow
         mysql::concpp
         argon2::argon2
+        OpenSSL::Crypto
 )
